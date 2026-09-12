@@ -1,0 +1,8 @@
+[INFO][server.go:38] 2026/09/12 16:42:13 Start listen
+[INFO][server.go:71] 2026/09/12 16:43:49 Accepted link
+[WARN][echo.go:62] 2026/09/12 16:43:53 EOF
+[INFO][server.go:71] 2026/09/12 16:43:55 Accepted link
+[INFO][server.go:51] 2026/09/12 16:46:04 shutting down
+[INFO][echo.go:75] 2026/09/12 16:46:04 handler shutting down
+[INFO][echo.go:59] 2026/09/12 16:46:04 Connecting close
+[INFO][echo.go:75] 2026/09/12 16:46:04 handler shutting down
