@@ -13,7 +13,7 @@ import (
 )
 
 // 记录所有连接客户端的信息，然后对所有客户端做的服务，就是：你发我什么，我回你什么
-
+// 测试用的Handler
 // 客户端实体
 type EchoClient struct {
 	Conn net.Conn

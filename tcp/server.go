@@ -76,7 +76,7 @@ func ListenAndServe(listener net.Listener,
 			// 如果在handler出现panic，会导致走不到Done
 			// 所以写进defer而不是写在下面
 			defer func() {
-				// 完成后减一
+				// 完成后等待组减一
 				waitDone.Done()
 			}()
 			handler.Handle(ctx, conn)

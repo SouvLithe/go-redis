@@ -47,8 +47,10 @@ func (r *MultiBulkReply) ToBytes() []byte {
 	return buf.Bytes()
 }
 
-func MakeMultiBulkReply(arg [][]byte) *MultiBulkReply {
-	return &MultiBulkReply{Args: arg}
+func MakeMultiBulkReply(args [][]byte) *MultiBulkReply {
+	return &MultiBulkReply{
+		Args: args,
+	}
 }
 
 // 回复通用的状态
