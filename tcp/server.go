@@ -2,6 +2,7 @@ package tcp
 
 import (
 	"context"
+	"fmt"
 	"go-redis/interface/tcp"
 	"go-redis/lib/logger"
 	"net"
@@ -36,6 +37,7 @@ func ListenAndServeWithSignal(
 		return err
 	}
 	logger.Info("Start listen")
+	logger.Info(fmt.Sprintf("bind: %s, start listening...", cfg.Address))
 	ListenAndServe(listener, handler, closeChan)
 	return nil
 }

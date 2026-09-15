@@ -29,8 +29,8 @@ type RespHandler struct {
 
 func MakeHandler() *RespHandler {
 	var db databaseface.Database
-	//TODO:实现Database
-	db = database.NewEchoDatabase()
+	//实现Database 这里更改db调用指令
+	db = database.NewDatabase()
 	return &RespHandler{
 		db: db,
 	}
@@ -43,14 +43,22 @@ func (h *RespHandler) closeClient(client *connection.Connection) {
 	h.activeConn.Delete(client)
 }
 
+// 处理客户端链接，每个链接用一个纤程对应
+// ctx 是上层传下来的上下文，conn 是这条 TCP 连接。
 func (h *RespHandler) Handle(ctx context.Context, conn net.Conn) {
 	// 将在关闭过程中的关闭请求，给关掉
 	if h.closing.Get() {
 		_ = conn.Close()
 	}
-	newConnection := connection.NewConnection(conn)
-	h.activeConn.Store(newConnection, 1)
+	client := connection.NewConnection(conn)
+
+	// 把这个连接登记到 activeConn 集合里。
+	h.activeConn.Store(client, struct{}{})
+
+	// 启动协议解析器，返回一个 channel
 	ch := parser.ParseStream(conn)
+
+	// 从 channel 里一条条取解析结果，直到 channel 被关闭（连接结束）。
 	for payload := range ch {
 		// error
 		if payload.Err != nil {
@@ -58,16 +66,16 @@ func (h *RespHandler) Handle(ctx context.Context, conn net.Conn) {
 			if payload.Err == io.EOF ||
 				payload.Err == io.ErrUnexpectedEOF ||
 				strings.Contains(payload.Err.Error(), "use of closed network connection") {
-				h.closeClient(newConnection)
-				logger.Info("connection closed: " + newConnection.RemoteAddr().String())
+				h.closeClient(client)
+				logger.Info("connection closed: " + client.RemoteAddr().String())
 				return
 			}
 			// 协议出问题
 			errReply := reply.MakeErrReply(payload.Err.Error())
-			err := newConnection.Write(errReply.ToBytes())
+			err := client.Write(errReply.ToBytes())
 			if err != nil {
-				h.closeClient(newConnection)
-				logger.Info("connection closed: " + newConnection.RemoteAddr().String())
+				h.closeClient(client)
+				logger.Info("connection closed: " + client.RemoteAddr().String())
 				return
 			}
 			// 成功处理错误并告诉用户，持续监听用户请求
@@ -83,11 +91,11 @@ func (h *RespHandler) Handle(ctx context.Context, conn net.Conn) {
 			logger.Error("require multi bulk reply")
 			continue
 		}
-		execResult := h.db.Exec(newConnection, r.Args)
+		execResult := h.db.Exec(client, r.Args)
 		if execResult != nil {
-			_ = newConnection.Write(r.ToBytes())
+			_ = client.Write(execResult.ToBytes())
 		} else {
-			_ = newConnection.Write(unknownErrReplyBytes)
+			_ = client.Write(unknownErrReplyBytes)
 		}
 	}
 }

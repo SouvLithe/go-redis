@@ -68,3 +68,8 @@
 [INFO][server.go:38] 2026/09/14 12:55:02 Start listen
 [INFO][server.go:71] 2026/09/14 12:55:02 Accepted link
 [INFO][server.go:71] 2026/09/14 12:55:11 Accepted link
+[INFO][server.go:51] 2026/09/14 13:00:54 shutting down
+[INFO][handler.go:97] 2026/09/14 13:00:54 handler shutting down
+[INFO][handler.go:62] 2026/09/14 13:00:54 connection closed: 127.0.0.1:14090
+[INFO][handler.go:62] 2026/09/14 13:00:54 connection closed: 127.0.0.1:14074
+[INFO][handler.go:97] 2026/09/14 13:00:54 handler shutting down

@@ -10,6 +10,7 @@ type Database interface {
 	AfterClientClose(client resp.Connection)
 }
 
+// 用来指代redis的各种数据类型
 type DataEntity struct {
 	Data interface{}
 }

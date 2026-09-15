@@ -5,6 +5,7 @@ import (
 	"go-redis/resp/reply"
 )
 
+// 只回发测试用的db，发给什么指令返回什么指令
 type EchoDatabase struct {
 }
 
