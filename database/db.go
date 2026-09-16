@@ -10,8 +10,9 @@ import (
 
 // dict的上层数据结构
 type DB struct {
-	index int
-	data  dict.Dict
+	index  int
+	data   dict.Dict
+	addAof func(CmdLine)
 }
 
 // 所有redis指令形式的实现
@@ -21,7 +22,8 @@ type CmdLine = [][]byte
 
 func makeDB() *DB {
 	db := &DB{
-		data: dict.MakeSyncDict(),
+		data:   dict.MakeSyncDict(),
+		addAof: func(line CmdLine) {},
 	}
 	return db
 }

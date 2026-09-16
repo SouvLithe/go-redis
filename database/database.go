@@ -1,6 +1,7 @@
 package database
 
 import (
+	"go-redis/aof"
 	"go-redis/config"
 	"go-redis/interface/resp"
 	"go-redis/lib/logger"
@@ -10,23 +11,44 @@ import (
 )
 
 type Database struct {
-	dbSet []*DB // 一组指针
+	dbSet      []*DB // 一组指针
+	aofHandler *aof.AofHandler
 }
 
 // 用于新建database
 func NewDatabase() *Database {
-	database := &Database{}
+	mdb := &Database{}
 	// 从config中拿到配置文件conf中的数据库个数
 	if config.Properties.Databases == 0 {
 		config.Properties.Databases = 16
 	}
-	database.dbSet = make([]*DB, config.Properties.Databases)
-	for i := range database.dbSet {
-		db := makeDB()         // 创建DB
-		db.index = i           // 给DB编号
-		database.dbSet[i] = db // 将DB存进去
+	mdb.dbSet = make([]*DB, config.Properties.Databases)
+	for i := range mdb.dbSet {
+		db := makeDB()    // 创建DB
+		db.index = i      // 给DB编号
+		mdb.dbSet[i] = db // 将DB存进去
 	}
-	return database
+
+	// 检查是否有配置
+	if config.Properties.AppendOnly {
+		aofHandler, err := aof.NewAofHandler(mdb)
+		if err != nil {
+			// 如果新建Aof处理器错误，那用户数据保护就有问题，选择崩掉
+			panic(err)
+		}
+		mdb.aofHandler = aofHandler
+		// 为了让db能够使用AddAof方法，使用匿名方法调用aof处理器的AddAof方法
+		for _, db := range mdb.dbSet {
+			// db = dbSet[0] -> dbSet[15] 出现闭包问题
+			// 内部变量引用外部变量，导致这个变量逃逸到了堆上
+			sdb := db
+			sdb.addAof = func(line CmdLine) {
+				mdb.aofHandler.AddAof(sdb.index, line)
+			}
+		}
+	}
+
+	return mdb
 }
 
 // select 1  or  65525过大

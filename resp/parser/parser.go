@@ -163,6 +163,7 @@ func readLine(bufReader *bufio.Reader, state *readState) ([]byte, bool, error) {
 }
 
 // 更新结构体属性
+// *2\r\n$6\r\nselect\r\n$1\r\n1\r\n
 // 示例：*3\r\n$3\r\nSET\r\n$3\r\nkey\r\n$5\r\nvalue\r\n
 func parseMultiBulkHeader(msg []byte, state *readState) error {
 	var err error

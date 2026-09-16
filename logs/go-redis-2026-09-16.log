@@ -1,0 +1,125 @@
+[INFO][server.go:39] 2026/09/16 11:45:40 Start listen
+[INFO][server.go:40] 2026/09/16 11:45:40 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 11:46:10 Accepted link
+[INFO][server.go:53] 2026/09/16 11:47:20 shutting down
+[INFO][handler.go:105] 2026/09/16 11:47:20 handler shutting down
+[INFO][handler.go:70] 2026/09/16 11:47:20 connection closed: 127.0.0.1:14213
+[INFO][handler.go:105] 2026/09/16 11:47:20 handler shutting down
+[INFO][server.go:39] 2026/09/16 11:47:23 Start listen
+[INFO][server.go:40] 2026/09/16 11:47:23 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 11:47:25 Accepted link
+[INFO][server.go:53] 2026/09/16 12:01:55 shutting down
+[INFO][handler.go:105] 2026/09/16 12:01:55 handler shutting down
+[INFO][handler.go:70] 2026/09/16 12:01:55 connection closed: 127.0.0.1:1486
+[INFO][handler.go:105] 2026/09/16 12:01:55 handler shutting down
+[INFO][server.go:39] 2026/09/16 12:02:03 Start listen
+[INFO][server.go:40] 2026/09/16 12:02:03 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 12:02:05 Accepted link
+[INFO][server.go:73] 2026/09/16 12:02:15 Accepted link
+[INFO][server.go:53] 2026/09/16 12:02:34 shutting down
+[INFO][handler.go:105] 2026/09/16 12:02:34 handler shutting down
+[INFO][handler.go:70] 2026/09/16 12:02:34 connection closed: 127.0.0.1:3243
+[INFO][handler.go:70] 2026/09/16 12:02:34 connection closed: 127.0.0.1:3227
+[INFO][handler.go:105] 2026/09/16 12:02:34 handler shutting down
+[INFO][server.go:39] 2026/09/16 12:03:09 Start listen
+[INFO][server.go:40] 2026/09/16 12:03:09 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 12:03:19 Accepted link
+[INFO][server.go:53] 2026/09/16 12:04:53 shutting down
+[INFO][handler.go:105] 2026/09/16 12:04:53 handler shutting down
+[INFO][handler.go:70] 2026/09/16 12:04:53 connection closed: 127.0.0.1:2490
+[INFO][handler.go:105] 2026/09/16 12:04:53 handler shutting down
+[INFO][server.go:39] 2026/09/16 12:05:16 Start listen
+[INFO][server.go:40] 2026/09/16 12:05:16 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 12:05:18 Accepted link
+[INFO][server.go:73] 2026/09/16 12:05:34 Accepted link
+[ERROR][handler.go:91] 2026/09/16 12:07:22 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:07:22 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:08:08 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:08:08 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:08:08 require multi bulk reply
+[INFO][handler.go:70] 2026/09/16 12:10:30 connection closed: 127.0.0.1:2671
+[ERROR][handler.go:91] 2026/09/16 12:11:09 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:11:09 require multi bulk reply
+[INFO][server.go:53] 2026/09/16 12:11:55 shutting down
+[INFO][handler.go:105] 2026/09/16 12:11:55 handler shutting down
+[INFO][handler.go:70] 2026/09/16 12:11:55 connection closed: 127.0.0.1:2695
+[INFO][handler.go:105] 2026/09/16 12:11:55 handler shutting down
+[INFO][server.go:39] 2026/09/16 12:12:59 Start listen
+[INFO][server.go:40] 2026/09/16 12:12:59 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 12:13:12 Accepted link
+[ERROR][handler.go:91] 2026/09/16 12:13:14 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:14 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:35 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:35 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:36 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:36 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:36 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:36 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:36 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:36 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:36 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:13:36 require multi bulk reply
+[INFO][server.go:53] 2026/09/16 12:13:54 shutting down
+[INFO][handler.go:105] 2026/09/16 12:13:54 handler shutting down
+[INFO][handler.go:70] 2026/09/16 12:13:54 connection closed: 127.0.0.1:7001
+[INFO][handler.go:105] 2026/09/16 12:13:54 handler shutting down
+[INFO][server.go:39] 2026/09/16 12:14:01 Start listen
+[INFO][server.go:40] 2026/09/16 12:14:01 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 12:14:01 Accepted link
+[ERROR][handler.go:91] 2026/09/16 12:14:07 require multi bulk reply
+[ERROR][handler.go:91] 2026/09/16 12:14:07 require multi bulk reply
+[INFO][server.go:53] 2026/09/16 12:18:53 shutting down
+[INFO][handler.go:105] 2026/09/16 12:18:53 handler shutting down
+[INFO][handler.go:70] 2026/09/16 12:18:53 connection closed: 127.0.0.1:7021
+[INFO][handler.go:105] 2026/09/16 12:18:53 handler shutting down
+[INFO][server.go:39] 2026/09/16 12:18:54 Start listen
+[INFO][server.go:40] 2026/09/16 12:18:54 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 12:18:58 Accepted link
+[ERROR][handler.go:91] 2026/09/16 12:19:02 require multi bulk reply
+[ERROR][handler.go:92] 2026/09/16 12:19:02 require multi bulk reply, but got type: %T, value: %v &{[115 101 108 101 99 116]} &{[115 101 108 101 99 116]}
+[ERROR][handler.go:91] 2026/09/16 12:19:02 require multi bulk reply
+[ERROR][handler.go:92] 2026/09/16 12:19:02 require multi bulk reply, but got type: %T, value: %v &{[49]} &{[49]}
+[INFO][server.go:53] 2026/09/16 12:20:06 shutting down
+[INFO][handler.go:106] 2026/09/16 12:20:06 handler shutting down
+[INFO][handler.go:70] 2026/09/16 12:20:06 connection closed: 127.0.0.1:3336
+[INFO][handler.go:106] 2026/09/16 12:20:06 handler shutting down
+[INFO][server.go:39] 2026/09/16 12:23:16 Start listen
+[INFO][server.go:40] 2026/09/16 12:23:16 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 12:23:25 Accepted link
+[INFO][server.go:53] 2026/09/16 12:31:09 shutting down
+[INFO][handler.go:105] 2026/09/16 12:31:09 handler shutting down
+[INFO][handler.go:70] 2026/09/16 12:31:09 connection closed: 127.0.0.1:2795
+[INFO][handler.go:105] 2026/09/16 12:31:09 handler shutting down
+[INFO][server.go:39] 2026/09/16 12:46:21 Start listen
+[INFO][server.go:40] 2026/09/16 12:46:21 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 12:46:28 Accepted link
+[INFO][handler.go:70] 2026/09/16 12:48:53 connection closed: 127.0.0.1:3051
+[INFO][server.go:53] 2026/09/16 12:48:57 shutting down
+[INFO][handler.go:105] 2026/09/16 12:48:57 handler shutting down
+[INFO][server.go:39] 2026/09/16 13:10:02 Start listen
+[INFO][server.go:40] 2026/09/16 13:10:02 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 13:10:11 Accepted link
+[INFO][server.go:53] 2026/09/16 13:26:15 shutting down
+[INFO][handler.go:105] 2026/09/16 13:26:15 handler shutting down
+[INFO][handler.go:70] 2026/09/16 13:26:15 connection closed: 127.0.0.1:7775
+[INFO][handler.go:105] 2026/09/16 13:26:15 handler shutting down
+[INFO][server.go:39] 2026/09/16 13:26:17 Start listen
+[INFO][server.go:40] 2026/09/16 13:26:17 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 13:26:20 Accepted link
+[INFO][server.go:53] 2026/09/16 13:27:17 shutting down
+[INFO][handler.go:105] 2026/09/16 13:27:17 handler shutting down
+[INFO][handler.go:70] 2026/09/16 13:27:17 connection closed: 127.0.0.1:8709
+[INFO][handler.go:105] 2026/09/16 13:27:17 handler shutting down
+[INFO][server.go:39] 2026/09/16 13:27:19 Start listen
+[INFO][server.go:40] 2026/09/16 13:27:19 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 13:27:22 Accepted link
+[INFO][server.go:53] 2026/09/16 13:32:16 shutting down
+[INFO][handler.go:105] 2026/09/16 13:32:16 handler shutting down
+[INFO][handler.go:70] 2026/09/16 13:32:16 connection closed: 127.0.0.1:12838
+[INFO][handler.go:105] 2026/09/16 13:32:16 handler shutting down
+[INFO][server.go:39] 2026/09/16 13:32:18 Start listen
+[INFO][server.go:40] 2026/09/16 13:32:18 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/16 13:32:21 Accepted link
+[INFO][handler.go:70] 2026/09/16 13:32:31 connection closed: 127.0.0.1:13954
+[INFO][server.go:53] 2026/09/16 13:32:40 shutting down
+[INFO][handler.go:105] 2026/09/16 13:32:40 handler shutting down
