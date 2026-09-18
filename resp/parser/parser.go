@@ -104,9 +104,7 @@ func parse0(reader io.Reader, ch chan<- *Payload) {
 			} else {
 				// +-*时
 				result, err := parseSingleLineReply(msg)
-				if err != nil {
-					ch <- &Payload{Data: result, Err: err}
-				}
+				ch <- &Payload{Data: result, Err: err}
 				state = readState{}
 				continue
 			}

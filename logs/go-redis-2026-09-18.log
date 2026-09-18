@@ -1,0 +1,22 @@
+[INFO][server.go:39] 2026/09/18 09:55:52 Start listen
+[INFO][server.go:40] 2026/09/18 09:55:52 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/18 09:56:00 Accepted link
+[INFO][handler.go:81] 2026/09/18 09:56:17 connection closed: 127.0.0.1:2610
+[INFO][server.go:73] 2026/09/18 09:56:19 Accepted link
+[INFO][handler.go:81] 2026/09/18 09:56:27 connection closed: 127.0.0.1:11414
+[INFO][server.go:53] 2026/09/18 09:56:31 shutting down
+[INFO][handler.go:116] 2026/09/18 09:56:31 handler shutting down
+[INFO][server.go:39] 2026/09/18 10:24:49 Start listen
+[INFO][server.go:40] 2026/09/18 10:24:49 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/18 10:25:02 Accepted link
+[INFO][server.go:53] 2026/09/18 10:25:34 shutting down
+[INFO][handler.go:116] 2026/09/18 10:25:34 handler shutting down
+[INFO][handler.go:81] 2026/09/18 10:25:34 connection closed: 127.0.0.1:10239
+[INFO][handler.go:116] 2026/09/18 10:25:34 handler shutting down
+[INFO][server.go:39] 2026/09/18 10:26:43 Start listen
+[INFO][server.go:40] 2026/09/18 10:26:43 bind: 0.0.0.0:6379, start listening...
+[INFO][server.go:73] 2026/09/18 10:26:50 Accepted link
+[INFO][server.go:53] 2026/09/18 10:28:19 shutting down
+[INFO][handler.go:116] 2026/09/18 10:28:19 handler shutting down
+[INFO][handler.go:81] 2026/09/18 10:28:19 connection closed: 127.0.0.1:11730
+[INFO][handler.go:116] 2026/09/18 10:28:19 handler shutting down

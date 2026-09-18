@@ -2,6 +2,8 @@ package handler
 
 import (
 	"context"
+	"go-redis/cluster"
+	"go-redis/config"
 	"go-redis/database"
 	"go-redis/lib/logger"
 	"go-redis/resp/connection"
@@ -12,7 +14,7 @@ import (
 	"strings"
 
 	// 别名 databaseface
-	databaseface "go-redis/interface/database"
+	databaseface "go-redis/interface/databaseface"
 	"go-redis/lib/sync/atomic"
 	"sync"
 )
@@ -27,10 +29,19 @@ type RespHandler struct {
 	closing    atomic.Boolean
 }
 
+// database在这里拉起来
 func MakeHandler() *RespHandler {
 	var db databaseface.Database
+
 	//实现Database 这里更改db调用指令
-	db = database.NewDatabase()
+	//db = database.NewStandaloneDatabase()
+	// 根据配置文件判断使用 集群 或者 单机 redis
+	if config.Properties.Self != "" && len(config.Properties.Peers) > 0 {
+		db = cluster.MakeClusterDatabase()
+	} else {
+		db = database.NewStandaloneDatabase()
+	}
+
 	return &RespHandler{
 		db: db,
 	}

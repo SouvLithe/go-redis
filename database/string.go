@@ -1,7 +1,7 @@
 package database
 
 import (
-	"go-redis/interface/database"
+	"go-redis/interface/databaseface"
 	"go-redis/interface/resp"
 	"go-redis/lib/utils"
 	"go-redis/resp/reply"
@@ -27,7 +27,7 @@ func execGet(db *DB, args [][]byte) resp.Reply {
 func execSet(db *DB, args [][]byte) resp.Reply {
 	key := string(args[0])
 	value := args[1]
-	entity := &database.DataEntity{
+	entity := &databaseface.DataEntity{
 		Data: value,
 	}
 	db.PutEntity(key, entity)
@@ -41,7 +41,7 @@ func execSet(db *DB, args [][]byte) resp.Reply {
 func execSetNX(db *DB, args [][]byte) resp.Reply {
 	key := string(args[0])
 	value := args[1]
-	entity := &database.DataEntity{
+	entity := &databaseface.DataEntity{
 		Data: value,
 	}
 	result := db.PutIFAbsent(key, entity)
@@ -61,7 +61,7 @@ func execGetSet(db *DB, args [][]byte) resp.Reply {
 	if !exists {
 		return reply.MakeNullBulkReply()
 	}
-	db.PutEntity(key, &database.DataEntity{Data: value})
+	db.PutEntity(key, &databaseface.DataEntity{Data: value})
 	return reply.MakeBulkReply(entity.Data.([]byte))
 }
 

@@ -2,7 +2,7 @@ package aof
 
 import (
 	"go-redis/config"
-	"go-redis/interface/database"
+	"go-redis/interface/databaseface"
 	"go-redis/lib/logger"
 	"go-redis/lib/utils"
 	"go-redis/resp/connection"
@@ -30,7 +30,7 @@ type payload struct {
 }
 
 type AofHandler struct {
-	database    database.Database
+	database    databaseface.Database
 	aofChan     chan *payload
 	aofFile     *os.File
 	aofFileName string
@@ -38,7 +38,7 @@ type AofHandler struct {
 }
 
 // 初始化AofHandler数据结构
-func NewAofHandler(database database.Database) (*AofHandler, error) {
+func NewAofHandler(database databaseface.Database) (*AofHandler, error) {
 	handler := &AofHandler{}
 	handler.aofFileName = config.Properties.AppendFilename
 	handler.database = database

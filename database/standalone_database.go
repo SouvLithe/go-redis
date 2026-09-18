@@ -10,14 +10,14 @@ import (
 	"strings"
 )
 
-type Database struct {
+type StandaloneDatabase struct {
 	dbSet      []*DB // 一组指针
 	aofHandler *aof.AofHandler
 }
 
 // 用于新建database
-func NewDatabase() *Database {
-	mdb := &Database{}
+func NewStandaloneDatabase() *StandaloneDatabase {
+	mdb := &StandaloneDatabase{}
 	// 从config中拿到配置文件conf中的数据库个数
 	if config.Properties.Databases == 0 {
 		config.Properties.Databases = 16
@@ -52,7 +52,7 @@ func NewDatabase() *Database {
 }
 
 // select 1  or  65525过大
-func execSelect(c resp.Connection, database *Database, args [][]byte) resp.Reply {
+func execSelect(c resp.Connection, database *StandaloneDatabase, args [][]byte) resp.Reply {
 	dbIndex, err := strconv.Atoi(string(args[0]))
 	if err != nil {
 		return reply.MakeErrReply("ERR invalid DB index")
@@ -68,7 +68,7 @@ func execSelect(c resp.Connection, database *Database, args [][]byte) resp.Reply
 下面3个函数在这一层没有特殊的逻辑，为空即可
 */
 // Set k v \ GET K \ SELECT 2
-func (database *Database) Exec(client resp.Connection, args [][]byte) resp.Reply {
+func (database *StandaloneDatabase) Exec(client resp.Connection, args [][]byte) resp.Reply {
 	// 向上抛出panic
 	defer func() {
 		if err := recover(); err != nil {
@@ -89,8 +89,8 @@ func (database *Database) Exec(client resp.Connection, args [][]byte) resp.Reply
 	return db.Exec(client, args)
 }
 
-func (database *Database) Close() {
+func (database *StandaloneDatabase) Close() {
 }
 
-func (database *Database) AfterClientClose(client resp.Connection) {
+func (database *StandaloneDatabase) AfterClientClose(client resp.Connection) {
 }
